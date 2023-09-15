@@ -8,8 +8,7 @@ But I have almost zero experience with the underlying math and with the tools av
 
 # todos
 
-- [ ] follow some examples from the book
-- [ ] rewrite some of these examples with variable names to explain what is happening (trying the low comment code style)
+- [ ] follow some examples from the book "Practical Python AI Projects: Mathematical Models of Optimization Problems with Google OR-Tools"
 - [ ] play with some type hinting in python
 - [ ] generate docs with inline test-cases?
 - [ ] github action to generate/publish those docs
