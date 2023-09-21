@@ -5,8 +5,11 @@ from ortools.linear_solver import pywraplp
 
 def solve_coexistence():
     """
-    Solves for coexistence of some animals given some use of shared
-    resources attempts to maximize total population.
+    Solves for coexistence of some animals.
+
+    Each species uses different amounts of some shared resources.
+    This function maximizes total population without over utilizing those
+    resources.
 
     :return: total population value, and a list of values for each species pop
 
