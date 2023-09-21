@@ -1,7 +1,20 @@
 from ortools.linear_solver import pywraplp
 
+"""this is an example module for sphinx 123abc """
+
 
 def solve_coexistence():
+    """
+    Solves for coexistence of some animals.
+
+    Each species uses different amounts of some shared resources.
+    This function maximizes total population without over utilizing those
+    resources.
+
+    :return: total population value, and a list of values for each species pop
+
+    :rtype: float, list(float)
+    """
     title = "Amphibian coexistence"
     solver = pywraplp.Solver(title, pywraplp.Solver.GLOP_LINEAR_PROGRAMMING)
 
