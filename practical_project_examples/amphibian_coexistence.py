@@ -4,6 +4,16 @@ from ortools.linear_solver import pywraplp
 
 
 def solve_coexistence():
+    """solves for coexistence of some animals given some use of shared resources
+    solver = pywraplp.Solver(title,pywraplp.Solver.GLOP_LINEAR_PROGRAMMING)
+    attempts to maximize total population
+
+    x = [solver.NumVar(0, 1000,'x[%i]' % i) for i in range(3)]
+    :return: total population value, and a list of values for each species pop
+
+    :rtype: float, list(float)
+    pop = solver.NumVar(0,3000,'pop')
+    """
     title = "Amphibian coexistence"
     solver = pywraplp.Solver(title, pywraplp.Solver.GLOP_LINEAR_PROGRAMMING)
 
@@ -26,7 +36,6 @@ def solve_coexistence():
     solver.Solve()
 
     return pop.SolutionValue(), [e.SolutionValue() for e in species]
-
 
 
 if __name__ == "__main__":
