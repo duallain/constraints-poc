@@ -10,9 +10,5 @@ But I have almost zero experience with the underlying math and with the tools av
 
 - [ ] follow some examples from the book "Practical Python AI Projects: Mathematical Models of Optimization Problems with Google OR-Tools"
 - [ ] play with some type hinting in python
-- [ ] generate docs with inline test-cases?
-- [ ] github action to generate/publish those docs
-- [ ] run tests cases for each pr
 - [ ] play around with some performance measurements. Given some test inputs, which algo is fastest for example
-- [ ] generate coverage
-- [ ] github action to run tests on pr
+- [ ] follow through on some possible projects: a. diet/food fill in, b. sheet good piece optimizer
