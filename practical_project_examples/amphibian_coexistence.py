@@ -1,7 +1,7 @@
 from ortools.linear_solver import pywraplp
-
-"""this is an example module for sphinx 123abc """
-
+    """
+    Example function from book showing how to get max population
+    """
 
 def solve_coexistence():
     """
