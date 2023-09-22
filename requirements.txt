@@ -1,2 +1,3 @@
+coverage
 ortools==9.7.2996
 sphinx==7.2.6

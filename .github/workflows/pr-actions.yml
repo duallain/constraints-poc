@@ -1,6 +1,8 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [pull_request]
+permissions:
+  pull-requests: write
 jobs:
   add-linter-annotations:
     runs-on: ubuntu-latest
@@ -11,5 +13,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: psf/black@stable
-    
+      - name: run black
+        uses: psf/black@stable
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Run unittests
+        run: |
+          coverage run --source=. -m unittest tests/*_test.py
+      - name: Generate coverage.xml
+        run: |
+          coverage xml
+      - name: Get Coverage 
+        uses: orgoro/coverage@v3.1
+        with:
+          coverageFile: coverage.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
