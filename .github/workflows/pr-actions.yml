@@ -12,4 +12,20 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: psf/black@stable
-    
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: run unittests
+        run: |
+          coverage run --source=. -m unittest tests/*_test.py
+      - name: generate coverage.xml
+        run: |
+          coverage xml
+      - name: Get Cover 
+        uses: orgoro/coverage@v3.1
+        with:
+          coverageFile: coverage.xml
+          token: ${{ secrets.GITHUB_TOKEN }}

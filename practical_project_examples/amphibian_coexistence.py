@@ -44,14 +44,14 @@ def solve_coexistence():
     return total_pop, species_pops
 
 
-if __name__ == "__main__":
-    pop, x = solve_coexistence()
+# if __name__ == "__main__":
+#     pop, x = solve_coexistence()
 
-    Table = [["Specie", "Count"]]
+#     Table = [["Specie", "Count"]]
 
-    for i in range(3):
-        Table.append([["Toads", "Salamanders", "Caecilians"][i], x[i]])
+#     for i in range(3):
+#         Table.append([["Toads", "Salamanders", "Caecilians"][i], x[i]])
 
-    Table.append(["Total", pop])
-    for key, value in Table:
-        print(key, value)
+#     Table.append(["Total", pop])
+#     for key, value in Table:
+#         print(key, value)
