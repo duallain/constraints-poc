@@ -1,6 +1,8 @@
 from ortools.linear_solver import pywraplp
 
-"""this is an example module for sphinx 123abc """
+"""
+    Example function from book showing how to get max population
+"""
 
 
 def solve_coexistence():
@@ -36,7 +38,10 @@ def solve_coexistence():
     # book doesn't have this line
     solver.Solve()
 
-    return pop.SolutionValue(), [e.SolutionValue() for e in species]
+    total_pop = round(pop.SolutionValue(), 1)
+    species_pops = [round(e.SolutionValue(), 1) for e in species]
+
+    return total_pop, species_pops
 
 
 if __name__ == "__main__":

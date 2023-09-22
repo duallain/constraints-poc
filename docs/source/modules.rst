@@ -5,3 +5,4 @@ practical_project_examples
    :maxdepth: 4
 
    practical_project_examples
+   tests
