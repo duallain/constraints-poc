@@ -1,7 +1,9 @@
 from ortools.linear_solver import pywraplp
-    """
+
+"""
     Example function from book showing how to get max population
-    """
+"""
+
 
 def solve_coexistence():
     """
