@@ -50,3 +50,39 @@ def solve_diet(InputTable):
     rc = s.Solve()
 
     return rc, ObjVal(s), SolVal(f)
+
+
+def solve_diet_2(FoodInput, NutrientInput):
+    s = newSolver("Diet")
+
+    food_vars = [s.NumVar(food["min"], food["max"], "") for food in FoodInput]
+
+    for n_idx, nutrient in enumerate(NutrientInput):
+        # sum of (each food * the amount of a nutrient per food)
+
+        s.Add(
+            nutrient["min"]
+            <= s.Sum(
+                [
+                    food_vars[f_idx] * food["nutrients"][n_idx]
+                    for f_idx, food in enumerate(FoodInput)
+                ]
+            )
+        )
+
+        s.Add(
+            nutrient["max"]
+            >= s.Sum(
+                [
+                    food_vars[f_idx] * food["nutrients"][n_idx]
+                    for f_idx, food in enumerate(FoodInput)
+                ]
+            )
+        )
+
+    s.Minimize(
+        s.Sum([food_vars[f_idx] * food["cost"] for f_idx, food in enumerate(FoodInput)])
+    )
+
+    rc = s.Solve()
+    return rc, ObjVal(s), SolVal(food_vars)
