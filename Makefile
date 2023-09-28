@@ -15,4 +15,5 @@ doc-gen:
 
 unittests:
 	@printf '\nrunning unittests\n'
-	python3 -m unittest tests/*_test.py 
+	coverage run --source=. -m unittest tests/*_test.py
+	coverage lcov 

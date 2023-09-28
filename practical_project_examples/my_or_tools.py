@@ -27,11 +27,3 @@ def SolVal(x):
 
 def ObjVal(x):
     return round(x.Objective().Value(), 2)
-
-
-def pairs(tuple, accum=[]):
-    if len(tuple) == 0:
-        return accum
-    else:
-        accum.extend((tuple[0], e) for e in tuple[1:])
-        return pairs(tuple[1:], accum)
