@@ -11,7 +11,7 @@ format:
 
 doc-gen:
 	@printf '\nmaking docs\n'
-	sphinx-apidoc -T -f -o ./docs/source practical_project_examples tests
+	sphinx-apidoc -T -f -o ./docs/source examples tests
 
 unittests:
 	@printf '\nrunning unittests\n'
