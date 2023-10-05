@@ -12,6 +12,14 @@ examples.amphibian\_coexistence module
    :undoc-members:
    :show-inheritance:
 
+examples.amphibian\_coexistence\_pyomo module
+---------------------------------------------
+
+.. automodule:: examples.amphibian_coexistence_pyomo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 examples.diet\_problem module
 -----------------------------
 

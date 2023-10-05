@@ -3,7 +3,7 @@ from examples.my_or_tools import SolVal, ObjVal, newSolver
 
 
 """
-    minimizes cost while still meeting nutrition
+    'practical' minimizes cost while still meeting nutrition
 """
 
 
