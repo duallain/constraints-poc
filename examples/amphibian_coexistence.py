@@ -1,7 +1,7 @@
 from ortools.linear_solver import pywraplp
 
 """
-    Example function from book showing how to get max population
+   'practical' example showing how to get max population
 """
 
 

@@ -1,10 +1,10 @@
 import unittest
-from examples.amphibian_coexistence import solve_coexistence
+from examples.amphibian_coexistence_pyomo import solve_coexistence_pyomo
 
 
-class TestSolveCoexistence(unittest.TestCase):
+class TestSolveCoexistencePyomo(unittest.TestCase):
     def setUp(self) -> None:
-        self.coexistence_total, self.coexistence_species = solve_coexistence()
+        self.coexistence_total, self.coexistence_species = solve_coexistence_pyomo()
         return super().setUp()
 
     def test_total_pop(self):

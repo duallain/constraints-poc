@@ -1,8 +1,8 @@
-practical_project_examples
+Constraint POC
 ==========================
 
 .. toctree::
    :maxdepth: 4
 
-   practical_project_examples
+   examples
    tests

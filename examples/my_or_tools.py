@@ -1,5 +1,9 @@
 from ortools.linear_solver import pywraplp
 
+"""
+some helper functions from 'practical' git repo
+"""
+
 
 def newSolver(name, integer=False):
     return pywraplp.Solver(
