@@ -8,7 +8,7 @@ class TestSolveSchedulePyomo(unittest.TestCase):
         price_schedule = {
             0: 0.5,
             1: 0.6,
-            2: 1.0,
+            2: 1.5,
             3: 1.0,
             4: 0.9,
             5: 1.1,
@@ -54,8 +54,8 @@ class TestSolveSchedulePyomo(unittest.TestCase):
             {
                 0: -0.0,
                 1: 0.0,
-                2: 125.0,
-                3: 150.0,
+                2: 150.0,
+                3: 125.0,
                 4: 0.0,
                 5: 150.0,
                 6: 150.0,
@@ -73,7 +73,7 @@ class TestSolveSchedulePyomo(unittest.TestCase):
             {
                 0: 500.0,
                 1: 500.0,
-                2: 375.0,
+                2: 350.0,
                 3: 225.0,
                 4: 375.0,
                 5: 300.0,

@@ -68,12 +68,11 @@ def solve_schedule_pyomo(price_schedule: dict, charge_schedule: dict) -> None:
 
     solver_returned_successfully = results.solver.status == SolverStatus.ok
 
+    # print(model.w.extract_values())
+    # print(model.s.extract_values())
+
     return (
         solver_returned_successfully,
         model.w.extract_values(),
         model.s.extract_values(),
     )
-
-    # print(f"time\tprice\tpower\tstorage")
-    # for t in model.T:
-    #     print(f"{t}\t{model.price[t]:.2f}\t{model.w[t]():>5.1f}\t{model.s[t]():>5.1f}")
