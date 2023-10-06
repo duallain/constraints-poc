@@ -12,9 +12,6 @@ def solve_schedule_pyomo(price_schedule: dict, charge_schedule: dict) -> None:
     :return: _description_
     :rtype: _type_
     """
-    # add a little check to ensure the schedules are shaped the same
-    if price_schedule.keys() != charge_schedule.keys():
-        return False
 
     model = pyomo.ConcreteModel()
     solver = pyomo.SolverFactory("cbc")
