@@ -28,6 +28,14 @@ examples.diet\_problem module
    :undoc-members:
    :show-inheritance:
 
+examples.linear\_scheduling module
+----------------------------------
+
+.. automodule:: examples.linear_scheduling
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 examples.my\_or\_tools module
 -----------------------------
 
