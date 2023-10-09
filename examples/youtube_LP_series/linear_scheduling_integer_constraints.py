@@ -31,6 +31,7 @@ def solve_schedule_pyomo(price_schedule: dict, charge_schedule: dict) -> None:
     # vars
     model.w = pyomo.Var(model.T, domain=pyomo.NonNegativeReals)
     model.s = pyomo.Var(model.T, domain=pyomo.NonNegativeReals)
+    model.y = pyomo.Var(model.T, domain=pyomo.Binary)
 
     def maximize_price(model):
         return sum([model.w[t] * model.price[t] for t in model.T])
@@ -48,7 +49,7 @@ def solve_schedule_pyomo(price_schedule: dict, charge_schedule: dict) -> None:
 
     model.constr_power = pyomo.Constraint(model.T, rule=constr_power)
 
-    def constraint_store_balance(model, t):
+    def constr_store_balance(model, t):
         # charge is a percentage from the schedule, so to turn to a single value we multiple
         if t == 0:
             return model.s[t] == model.S0 - model.w[t] + model.charge[t] * model.SMax
@@ -57,9 +58,17 @@ def solve_schedule_pyomo(price_schedule: dict, charge_schedule: dict) -> None:
                 model.s[t] == model.s[t - 1] - model.w[t] + model.charge[t] * model.SMax
             )
 
-    model.constr_store_balance = pyomo.Constraint(
-        model.T, rule=constraint_store_balance
-    )
+    model.constr_store_balance = pyomo.Constraint(model.T, rule=constr_store_balance)
+
+    def constr_min_runtime(model):
+        return sum([model.y[t] for t in model.T]) >= 8
+
+    model.constr_min_runtime = pyomo.Constraint(rule=constr_min_runtime)
+
+    def constr_run_mode(model, t):
+        return model.y[t] * model.wmax / 2 <= model.w[t]
+
+    model.constr_run_mode = pyomo.Constraint(model.T, rule=constr_run_mode)
 
     results = solver.solve(model)
 
@@ -72,4 +81,5 @@ def solve_schedule_pyomo(price_schedule: dict, charge_schedule: dict) -> None:
         solver_returned_successfully,
         model.w.extract_values(),
         model.s.extract_values(),
+        pyomo.value(model.objective),
     )

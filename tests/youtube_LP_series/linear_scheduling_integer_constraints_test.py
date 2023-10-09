@@ -37,9 +37,12 @@ class TestSolveSchedulePyomo(unittest.TestCase):
             11: 0.0,
         }
 
-        self.rc, self.power_sold, self.energy_stored = solve_schedule_pyomo(
-            price_schedule, charge_schedule
-        )
+        (
+            self.rc,
+            self.power_sold,
+            self.energy_stored,
+            self.objective_value,
+        ) = solve_schedule_pyomo(price_schedule, charge_schedule)
 
     # Tests to write:
     # test that a solution was returned
@@ -54,18 +57,18 @@ class TestSolveSchedulePyomo(unittest.TestCase):
         self.assertEqual(
             self.power_sold,
             {
-                0: -0.0,
+                0: 0.0,
                 1: 0.0,
                 2: 150.0,
-                3: 125.0,
-                4: 0.0,
-                5: 150.0,
+                3: 75.0,
+                4: 75.0,
+                5: 125.0,
                 6: 150.0,
                 7: 150.0,
-                8: 0.0,
+                8: 75.0,
                 9: 0.0,
                 10: 0.0,
-                11: 150.0,
+                11: 75.0,
             },
         )
 
@@ -76,14 +79,17 @@ class TestSolveSchedulePyomo(unittest.TestCase):
                 0: 500.0,
                 1: 500.0,
                 2: 350.0,
-                3: 225.0,
-                4: 375.0,
+                3: 275.0,
+                4: 350.0,
                 5: 300.0,
                 6: 225.0,
                 7: 100.0,
-                8: 125.0,
-                9: 150.0,
-                10: 150.0,
+                8: 50.0,
+                9: 75.0,
+                10: 75.0,
                 11: 0.0,
             },
         )
+
+    def test_objective_value(self):
+        self.assertEqual(self.objective_value, 1142.5)

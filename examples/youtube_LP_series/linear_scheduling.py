@@ -72,4 +72,5 @@ def solve_schedule_pyomo(price_schedule: dict, charge_schedule: dict) -> None:
         solver_returned_successfully,
         model.w.extract_values(),
         model.s.extract_values(),
+        pyomo.value(model.objective),
     )
