@@ -1,5 +1,5 @@
 import unittest
-from examples.amphibian_coexistence import solve_coexistence
+from examples.practical_examples_book.amphibian_coexistence import solve_coexistence
 
 
 class TestSolveCoexistence(unittest.TestCase):

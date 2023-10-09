@@ -1,5 +1,5 @@
 import unittest
-from examples.diet_problem import solve_diet, solve_diet_2
+from examples.practical_examples_book.diet_problem import solve_diet, solve_diet_2
 
 
 class TestSolveDiet(unittest.TestCase):

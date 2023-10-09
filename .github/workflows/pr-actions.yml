@@ -27,7 +27,7 @@ jobs:
           sudo apt-get install -y coinor-cbc
       - name: Run unittests
         run: |
-          coverage run --source=. -m unittest tests/*_test.py
+          coverage run --source=. -m unittest tests/*_test.py tests/*/*_test.py
       - name: Generate coverage.xml
         run: |
           coverage xml
