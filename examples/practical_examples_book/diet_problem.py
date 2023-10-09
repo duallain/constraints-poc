@@ -1,5 +1,5 @@
 from ortools.linear_solver import pywraplp
-from examples.my_or_tools import SolVal, ObjVal, newSolver
+from examples.practical_examples_book.my_or_tools import SolVal, ObjVal, newSolver
 
 
 """

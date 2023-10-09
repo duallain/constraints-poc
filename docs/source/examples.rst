@@ -1,48 +1,14 @@
 examples package
 ================
 
-Submodules
-----------
+Subpackages
+-----------
 
-examples.amphibian\_coexistence module
---------------------------------------
+.. toctree::
+   :maxdepth: 4
 
-.. automodule:: examples.amphibian_coexistence
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-examples.amphibian\_coexistence\_pyomo module
----------------------------------------------
-
-.. automodule:: examples.amphibian_coexistence_pyomo
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-examples.diet\_problem module
------------------------------
-
-.. automodule:: examples.diet_problem
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-examples.linear\_scheduling module
-----------------------------------
-
-.. automodule:: examples.linear_scheduling
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-examples.my\_or\_tools module
------------------------------
-
-.. automodule:: examples.my_or_tools
-   :members:
-   :undoc-members:
-   :show-inheritance:
+   examples.practical_examples_book
+   examples.youtube_LP_series
 
 Module contents
 ---------------

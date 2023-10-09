@@ -1,5 +1,7 @@
 import unittest
-from examples.amphibian_coexistence_pyomo import solve_coexistence_pyomo
+from examples.youtube_LP_series.amphibian_coexistence_pyomo import (
+    solve_coexistence_pyomo,
+)
 
 
 class TestSolveCoexistencePyomo(unittest.TestCase):

@@ -1,5 +1,5 @@
 import unittest
-from examples.linear_scheduling import solve_schedule_pyomo
+from examples.youtube_LP_series.linear_scheduling import solve_schedule_pyomo
 
 
 class TestSolveSchedulePyomo(unittest.TestCase):
