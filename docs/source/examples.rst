@@ -7,7 +7,6 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   examples.bespoke_bad_ideas
    examples.practical_examples_book
    examples.youtube_LP_series
 

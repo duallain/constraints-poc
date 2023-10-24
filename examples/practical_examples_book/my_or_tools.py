@@ -1,5 +1,4 @@
 from ortools.linear_solver import pywraplp
-import os
 
 """
 some helper functions from 'practical' git repo

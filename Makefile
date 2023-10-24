@@ -9,9 +9,13 @@ format:
 	black .
 
 lint:
-	@printf '\formatting then checking python files with ruff\n'
+	@printf '\nformatting then checking python files with ruff\n'
 	ruff format .
 	ruff check .
+
+fix:
+	@printf '\nfixing python files with ruff\n'
+	ruff . --fix
 
 doc-gen:
 	@printf '\nmaking docs\n'
