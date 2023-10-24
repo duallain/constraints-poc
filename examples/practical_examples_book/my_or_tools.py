@@ -15,7 +15,7 @@ def newSolver(name, integer=False):
 
 
 def SolVal(x):
-    if type(x) is not list:
+    if not isinstance(x, list):
         return (
             0
             if x is None
@@ -25,7 +25,7 @@ def SolVal(x):
             if x.Integer() is False
             else int(x.SolutionValue())
         )
-    elif type(x) is list:
+    elif isinstance(x, list):
         return [SolVal(e) for e in x]
 
 

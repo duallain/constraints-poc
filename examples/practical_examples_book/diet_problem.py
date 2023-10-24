@@ -1,4 +1,3 @@
-from ortools.linear_solver import pywraplp
 from examples.practical_examples_book.my_or_tools import SolVal, ObjVal, newSolver
 
 

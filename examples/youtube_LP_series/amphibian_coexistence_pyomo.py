@@ -40,7 +40,7 @@ def solve_coexistence_pyomo():
         rule=lambda model: model.pop, sense=pyomo.maximize
     )
 
-    result = solver.solve(model)
+    solver.solve(model)
     # print(result)
 
     total_pop = round(pyomo.value(model.pop), 1)
