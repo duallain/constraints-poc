@@ -17,11 +17,11 @@ jobs:
       - uses: actions/checkout@v1
       - name: run black
         uses: psf/black@stable
+      - uses: chartboost/ruff-action@v1
   unittest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: chartboost/ruff-action@v1
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
