@@ -1,5 +1,5 @@
 coverage==7.4.0
 ortools==9.8.3296
 pyomo==6.7.0
-ruff==0.1.14
+ruff==0.3.4
 sphinx==7.2.6
